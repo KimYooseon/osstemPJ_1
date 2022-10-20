@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1067</width>
-    <height>574</height>
+    <width>1700</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,7 +47,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1067</width>
+     <width>1700</width>
      <height>17</height>
     </rect>
    </property>
@@ -72,6 +72,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionQuit"/>
+   <addaction name="actionChat"/>
   </widget>
   <action name="actionQuit">
    <property name="text">
@@ -84,6 +85,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="actionChat">
+   <property name="text">
+    <string>Chat</string>
    </property>
   </action>
  </widget>

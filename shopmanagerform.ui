@@ -51,6 +51,26 @@
         <string>Count</string>
        </property>
       </column>
+      <column>
+       <property name="text">
+        <string>Price</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Total Price</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Address</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Phone Number</string>
+       </property>
+      </column>
      </widget>
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
@@ -60,9 +80,9 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
-         <width>229</width>
-         <height>261</height>
+         <y>-17</y>
+         <width>276</width>
+         <height>278</height>
         </rect>
        </property>
        <attribute name="label">
@@ -140,6 +160,44 @@
          </layout>
         </item>
         <item>
+         <widget class="QTreeWidget" name="CustomertreeWidget">
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Phone Number</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Address</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="ProducttreeWidget">
+          <column>
+           <property name="text">
+            <string>Product Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Price</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Category</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
          <spacer name="verticalSpacer">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -177,7 +235,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>229</width>
+         <width>286</width>
          <height>261</height>
         </rect>
        </property>
@@ -213,6 +271,26 @@
           <column>
            <property name="text">
             <string>Count</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Price</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Total Price</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Address</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Phone Number</string>
            </property>
           </column>
          </widget>

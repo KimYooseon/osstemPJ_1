@@ -22,11 +22,12 @@ public:
     void loadData();
 public slots:
     void addClient(QString, int);
-    void addProduct(QString, int);
+    void addProduct(QString, int, QString, int);
     void modifyClient(QString, int, int);
     void removeClient(int);
     void modifyProduct(QString, int, int);
     void removeProduct(int);
+
 
 
 private slots:
@@ -37,10 +38,20 @@ private slots:
     void on_addPushButton_clicked();
     void on_modifyPushButton_clicked();
     void on_searchPushButton_clicked();
+    //void on_customer_Clicked();
+
+    void on_shoppidcomboBox_textActivated(const QString &arg1);
+    void PInfoSended(QString, int, QString);
+
+    void on_shopcidcomboBox_textActivated(const QString &arg1);
+    void CInfoSended(QString, QString, QString);
+
 
 signals:
     void orderAdded(QString);
-
+    void sendpname(int);
+    void SendPID(int);
+    void SendCID(int);
 private:
     int makeId();
 

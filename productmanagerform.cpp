@@ -52,7 +52,7 @@ void ProductManagerForm::loadData()
             ui->treeWidget->addTopLevelItem(p);
             productList.insert(id, p);
 
-            emit productAdded(row[1], row[0].toInt());
+            emit productAdded(row[1], row[2].toInt(), row[3], row[0].toInt());
         }
     }
     file.close( );
@@ -164,6 +164,10 @@ void ProductManagerForm::on_addPushButton_clicked()
     int price;
     int id = makeId( );
 
+    if(ui->productnameLineEdit->text() == "" || ui->priceLineEdit->text() == "" || ui->categoryLineEdit->text() == "")
+    {
+        return;
+    }
     productname = ui->productnameLineEdit->text();
     price = ui->priceLineEdit->text().toInt();
     category = ui->categoryLineEdit->text();
@@ -171,7 +175,7 @@ void ProductManagerForm::on_addPushButton_clicked()
         ProductItem* p = new ProductItem(id, productname, price, category);
         productList.insert(id, p);
         ui->treeWidget->addTopLevelItem(p);
-        emit productAdded(productname, id);
+        emit productAdded(productname, price, category, id);
     }
 }
 
@@ -184,3 +188,34 @@ void ProductManagerForm::on_treeWidget_itemClicked(QTreeWidgetItem *item, int co
     ui->categoryLineEdit->setText(item->text(3));
     ui->toolBox->setCurrentIndex(0);
 }
+
+//void ProductManagerForm::getpname(int i){
+//    i = ui->searchComboBox->currentIndex();
+//    auto flag = (i==0 || i==2)? Qt::MatchCaseSensitive|Qt::MatchContains
+//                       : Qt::MatchCaseSensitive;
+
+//    {
+//        auto items = ui->treeWidget->findItems(ui->searchLineEdit->text(), flag, i);
+
+//        foreach(auto i, items) {
+//            ProductItem* p = static_cast<ProductItem*>(i);
+//            int id = p->id();
+//            QString productname = p->getProductName();
+//            int price = p->getPrice();
+//            QString category = p->getCategory();
+//            ProductItem* item = new ProductItem(id, productname, price, category);
+//            ui->searchTreeWidget->addTopLevelItem(item);
+//        }
+//    }
+
+//}
+
+void ProductManagerForm::PIDsended(int id){
+    ProductItem *p = productList[id];
+    QString pname = p->getProductName();
+    int price = p->getPrice();
+    QString category = p->getCategory();
+
+    emit sendPInfo(pname, price, category);
+}
+

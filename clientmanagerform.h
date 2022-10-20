@@ -29,12 +29,12 @@ private slots:
     void on_addPushButton_clicked();
     void on_modifyPushButton_clicked();
     void on_searchPushButton_clicked();
-
+    void CIDsended(int);
 signals:
     void clientAdded(QString, int);
     void clientModified(QString, int, int);
     void clientRemoved(int);
-
+    void sendCInfo(QString, QString, QString);
 private:
     int makeId();
 

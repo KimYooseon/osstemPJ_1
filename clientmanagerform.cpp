@@ -149,6 +149,10 @@ void ClientManagerForm::on_addPushButton_clicked()
     QString name, number, address;
 
     int id = makeId( );
+    if(ui->nameLineEdit->text() == "" || ui->phoneNumberLineEdit->text() == "" || ui->addressLineEdit->text() == "")
+    {
+        return;
+    }
     name = ui->nameLineEdit->text();
     number = ui->phoneNumberLineEdit->text();
     address = ui->addressLineEdit->text();
@@ -170,3 +174,11 @@ void ClientManagerForm::on_treeWidget_itemClicked(QTreeWidgetItem *item, int col
     ui->toolBox->setCurrentIndex(0);
 }
 
+void ClientManagerForm::CIDsended(int id){
+    ClientItem *c = clientList[id];
+    QString name = c->getName();
+    QString phonenumber = c->getPhoneNumber();
+    QString address = c->getAddress();
+
+    emit sendCInfo(name, phonenumber, address);
+}

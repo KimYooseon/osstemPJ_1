@@ -52,15 +52,15 @@
      </widget>
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="inputPage">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>197</width>
-         <height>222</height>
+         <width>211</width>
+         <height>240</height>
         </rect>
        </property>
        <attribute name="label">
@@ -165,8 +165,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>197</width>
-         <height>222</height>
+         <width>211</width>
+         <height>240</height>
         </rect>
        </property>
        <attribute name="label">

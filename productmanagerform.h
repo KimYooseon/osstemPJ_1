@@ -30,11 +30,14 @@ private slots:
     void on_addPushButton_clicked();
     void on_modifyPushButton_clicked();
     void on_searchPushButton_clicked();
+    void PIDsended(int);
 
 signals:
-    void productAdded(QString, int);
+    void productAdded(QString, int, QString, int);
     void productModified(QString, int, int);
     void productRemoved(int);
+    void sendPInfo(QString, int, QString);
+
 
 private:
     int makeId();
